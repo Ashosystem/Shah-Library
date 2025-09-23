@@ -2940,7 +2940,7 @@ const libraryData = {
         {
           "title": "Special Illumination: The Sufi Use of Humour",
           "main_url": "https://idriesshahfoundation.org/books/special-illumination-the-sufi-use-of-humour/",
-          "pdf_url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour/?auto_viewer=true",
+          "pdf_url": "https://idriesshahfoundation.org/pdfviewer/special-illumination/?auto_viewer=true",
           "description": "Theoretical framework for understanding humor in spiritual development",
           "note": "This work does not have a formal table of contents. It is a single extended essay on The Sufi Use of Humour"
         }
