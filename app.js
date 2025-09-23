@@ -1,5 +1,89 @@
 // Idries Shah Library Application with Expand/Collapse Functionality
 
+// PDF Display Fix Functions - Added to fix PDF viewer blank display issue
+function fixPDFViewerDisplay(pdfWindow) {
+    if (!pdfWindow || pdfWindow.closed) return;
+
+    setTimeout(() => {
+        try {
+            // Method 1: Try to access PDFViewerApplication directly
+            if (pdfWindow.PDFViewerApplication && pdfWindow.PDFViewerApplication.pdfDocument) {
+                const currentPage = pdfWindow.PDFViewerApplication.page || 1;
+                // Force a page change to trigger rendering
+                if (pdfWindow.PDFViewerApplication.pdfDocument.numPages > 1) {
+                    pdfWindow.PDFViewerApplication.page = currentPage === 1 ? 2 : 1;
+                    setTimeout(() => {
+                        pdfWindow.PDFViewerApplication.page = currentPage;
+                    }, 200);
+                } else {
+                    // For single page documents, force a zoom change
+                    const currentZoom = pdfWindow.PDFViewerApplication.pdfViewer.currentScale;
+                    pdfWindow.PDFViewerApplication.pdfViewer.currentScale = currentZoom * 1.01;
+                    setTimeout(() => {
+                        pdfWindow.PDFViewerApplication.pdfViewer.currentScale = currentZoom;
+                    }, 200);
+                }
+            } else {
+                // Method 2: Send message to trigger refresh
+                pdfWindow.postMessage({type: 'refreshPDF', action: 'forceRender'}, '*');
+            }
+        } catch (error) {
+            console.log('PDF fix attempt failed (likely due to cross-origin restrictions):', error);
+            // Fallback: reload the PDF window
+            try {
+                pdfWindow.location.reload();
+            } catch (reloadError) {
+                console.log('PDF window reload also failed');
+            }
+        }
+    }, 2000); // Wait 2 seconds for PDF to initialize
+}
+
+function generateFixedPDFUrl(originalUrl) {
+    try {
+        const url = new URL(originalUrl);
+        // Add cache busting parameters
+        url.searchParams.set('t', Date.now());
+        url.searchParams.set('refresh', '1');
+        // Ensure auto_viewer is set
+        url.searchParams.set('auto_viewer', 'true');
+        return url.toString();
+    } catch (error) {
+        // Fallback for invalid URLs
+        const separator = originalUrl.includes('?') ? '&' : '?';
+        return `${originalUrl}${separator}t=${Date.now()}&refresh=1`;
+    }
+}
+
+function openPDFWithFix(originalPdfUrl) {
+    const fixedUrl = generateFixedPDFUrl(originalPdfUrl);
+    const pdfWindow = window.open(fixedUrl, '_blank', 'noopener,noreferrer');
+
+    if (pdfWindow) {
+        // Apply the display fix
+        fixPDFViewerDisplay(pdfWindow);
+
+        // Additional fix attempt after longer delay
+        setTimeout(() => {
+            fixPDFViewerDisplay(pdfWindow);
+        }, 5000);
+    }
+
+    return pdfWindow;
+}
+
+// Message listener for cross-window communication
+window.addEventListener('message', function(event) {
+    if (event.data && event.data.type === 'refreshPDF') {
+        // This runs in the PDF viewer window
+        setTimeout(() => {
+            if (window.PDFViewerApplication && window.PDFViewerApplication.pdfDocument) {
+                window.PDFViewerApplication.forceRendering();
+            }
+        }, 100);
+    }
+});
+
 // Complete library data with all 10 categories
 const libraryData = {
   "categories": {
@@ -4077,13 +4161,14 @@ function setupEventListeners() {
     }
     
     // Handle quick read buttons
-    if (e.target.closest('.quick-read-btn')) {
+     if (e.target.closest('.quick-read-btn')) {
       e.preventDefault();
       e.stopPropagation();
       const button = e.target.closest('.quick-read-btn');
       const pdfUrl = button.getAttribute('data-pdf-url');
       if (pdfUrl) {
-        window.open(pdfUrl, '_blank', 'noopener,noreferrer');
+        // Use the enhanced PDF opening function
+        openPDFWithFix(pdfUrl);
       }
       return;
     }
@@ -4272,7 +4357,13 @@ function openBookModal(book) {
   
   if (modalBookTitle) modalBookTitle.textContent = book.title;
   if (modalBookDescription) modalBookDescription.textContent = book.description;
-  if (modalReadFull) modalReadFull.href = book.pdf_url;
+  if (modalReadFull) {
+      modalReadFull.href = '#'; // Prevent default link behavior
+      modalReadFull.onclick = function(e) {
+        e.preventDefault();
+        openPDFWithFix(book.pdf_url);
+      };
+    }
   if (modalBookInfo) modalBookInfo.href = book.main_url;
   
   // Handle chapters
