@@ -1398,7 +1398,7 @@ const libraryData = {
           "main_url": "https://idriesshahfoundation.org/books/observations/",
           "pdf_url": "https://idriesshahfoundation.org/pdfviewer/observations/?auto_viewer=true",
           "description": "Short observations and aphorisms on human behavior patterns",
-          "note": "The entry title naming is AI generated.",
+          "note": "The title naming is AI generated.",
           "chapters": [
           { title: "Foreword", page: "viii", url: "https://idriesshahfoundation.org/pdfviewer/observations/?auto_viewer=true#page=8" },
           { title: "Teaching and Memory", page: 1, url: "https://idriesshahfoundation.org/pdfviewer/observations/?auto_viewer=true#page=9" },
