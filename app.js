@@ -2953,7 +2953,7 @@ const libraryData = {
         {
           "title": "A Veiled Gazelle: Seeing How to See",
           "main_url": "https://idriesshahfoundation.org/books/a-veiled-gazelle-seeing-how-to-see/",
-          "pdf_url": "https://idriesshahfoundation.org/pdfviewer/a-veiled-gazelle-seeing-how-to-see/?auto_viewer=true",
+          "pdf_url": "https://idriesshahfoundation.org/pdfviewer/a-veiled-gazelle/?auto_viewer=true",
           "description": "Contemporary applications of perceptual awareness and insight",
           "chapters": [
               { title: "Introduction", page: "ix", url: "https://idriesshahfoundation.org/pdfviewer/a-veiled-gazelle/?auto_viewer=true#page=9" },
