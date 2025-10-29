@@ -4112,6 +4112,12 @@ document.addEventListener('DOMContentLoaded', function() {
   initializeApp();
 });
 
+function getBookSlug(book) {
+    const url = book.main_url || book.pdf_url || '';
+    const match = url.match(/\/(?:books|pdfviewer)\/([^\/\?]+)/);
+    return match ? match[1] : null;
+}
+
 function initializeApp() {
   buildSearchIndex();
   renderLibrary();
@@ -4200,9 +4206,20 @@ function createCategoryElement(categoryName, categoryData) {
 // Create book card HTML
 function createBookCardHTML(book) {
   const hasNote = book.note && book.note.length > 0;
-  
+
+  // Get book slug for thumbnail lookup
+  const slug = getBookSlug(book);
+  const thumbnailPath = slug ? `images/thumbnails/${slug}.png` : '';
+
   return `
     <div class="book-card" data-book-title="${book.title}">
+      ${thumbnailPath ? `
+        <div class="book-thumbnail">
+          <img src="${thumbnailPath}"
+               alt="${book.title}"
+               onerror="this.parentElement.style.display='none';">
+        </div>
+      ` : ''}
       <h3 class="book-title">${book.title}</h3>
       <p class="book-description">${book.description}</p>
       ${hasNote ? `<div class="book-note">${book.note}</div>` : ''}
