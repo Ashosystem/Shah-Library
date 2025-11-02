@@ -1,3 +1,186 @@
+// =============================================================================
+// PERPLEXITY API INTEGRATION
+// =============================================================================
+
+// Perplexity API Configuration
+const PERPLEXITY_CONFIG = {
+    apiKey: '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',
+    apiEndpoint: 'https://api.perplexity.ai/chat/completions',
+    model: 'sonar-pro', // Using Pro model for high-quality responses
+    systemPrompt: `Please provide detailed,insightful responses about the teachings, books, and Sufi philosophy contained within the search domain.
+
+    Do not make up sources or quotations.
+
+    Be scholarly but accessible.
+
+    If you cannot find something, tell the user rather than fabricating a reference.
+
+    If I ask for a piece from one of Shahs books to be quoted without explanation, please do so, by finding the PDF of the book
+    within this public URL idriesshahfoundation.org/pdfviewer and looking inside it.`,
+    searchDomains: ['idriesshahfoundation.org'],
+
+};
+
+/**
+ * Query Perplexity API for Idries Shah related questions
+ * @param {string} userQuery - The user's question
+ * @returns {Promise<string>} - The AI response
+ */
+async function queryPerplexityAPI(userQuery) {
+    try {
+        const response = await fetch(PERPLEXITY_CONFIG.apiEndpoint, {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${PERPLEXITY_CONFIG.apiKey}`,
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                model: PERPLEXITY_CONFIG.model,
+                messages: [
+                    {
+                        role: 'system',
+                        content: PERPLEXITY_CONFIG.systemPrompt
+                    },
+                    {
+                        role: 'user',
+                        content: userQuery
+                    }
+                ],
+                search_domain_filter: ['idriesshahfoundation.org'],
+                temperature: 0.7,
+                max_tokens: 2000,
+                stream: false
+            })
+        });
+
+        if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.error?.message || `API request failed: ${response.status}`);
+        }
+
+        const data = await response.json();
+
+        if (data.choices && data.choices.length > 0) {
+            return data.choices[0].message.content;
+        } else {
+            throw new Error('No response received from API');
+        }
+    } catch (error) {
+        console.error('Perplexity API Error:', error);
+        throw error;
+    }
+}
+
+/**
+ * Format markdown-style text for HTML display
+ * @param {string} text - The text to format
+ * @returns {string} - HTML formatted text
+ */
+function formatResponse(text) {
+    // Convert markdown-style formatting to HTML
+    let formatted = text
+        // Bold text
+        .replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>')
+        // Italic text
+        .replace(/\*(.+?)\*/g, '<em>$1</em>')
+        // Links
+        .replace(/\[(.+?)\]\((.+?)\)/g, '<a href="$2" target="_blank" rel="noopener noreferrer">$1</a>')
+        // Line breaks
+        .replace(/\n\n/g, '</p><p>')
+        .replace(/\n/g, '<br>');
+
+    // Wrap in paragraphs
+    formatted = '<p>' + formatted + '</p>';
+
+    // Handle lists
+    formatted = formatted.replace(/<p>([•\-\*])\s/g, '<ul><li>')
+        .replace(/<\/p><p>([•\-\*])\s/g, '</li><li>')
+        .replace(/<\/p>(?!<\/li>)/g, '</ul></p>');
+
+    return formatted;
+}
+
+/**
+ * Initialize Perplexity search functionality
+ */
+function initializePerplexitySearch() {
+    const searchBtn = document.getElementById('searchBtn');
+    const queryInput = document.getElementById('perplexityQuery');
+    const responseDiv = document.getElementById('searchResponse');
+    const responseContent = document.getElementById('responseContent');
+    const clearBtn = document.getElementById('clearResponse');
+    const btnText = searchBtn.querySelector('.btn-text');
+    const btnLoader = searchBtn.querySelector('.btn-loader');
+
+    if (!searchBtn || !queryInput || !responseDiv || !responseContent) {
+        console.error('Search elements not found in DOM');
+        return;
+    }
+
+    // Handle search button click
+    searchBtn.addEventListener('click', async () => {
+        const query = queryInput.value.trim();
+
+        if (!query) {
+            alert('Please enter a question');
+            return;
+        }
+
+        // Show loading state
+        searchBtn.disabled = true;
+        btnText.style.display = 'none';
+        btnLoader.style.display = 'inline-flex';
+        responseDiv.style.display = 'block';
+        responseContent.className = 'response-content loading';
+        responseContent.textContent = 'Searching for insights...';
+
+        try {
+            // Call Perplexity API
+            const response = await queryPerplexityAPI(query);
+
+            // Display response
+            responseContent.className = 'response-content';
+            responseContent.innerHTML = formatResponse(response);
+
+            // Scroll to response
+            responseDiv.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } catch (error) {
+            // Display error
+            responseContent.className = 'response-content error';
+            responseContent.textContent = `Error: ${error.message}. Please try again.`;
+        } finally {
+            // Reset button state
+            searchBtn.disabled = false;
+            btnText.style.display = 'inline';
+            btnLoader.style.display = 'none';
+        }
+    });
+
+    // Handle Enter key in textarea (Ctrl+Enter or Cmd+Enter to submit)
+    queryInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+            e.preventDefault();
+            searchBtn.click();
+        }
+    });
+
+    // Handle clear button
+    if (clearBtn) {
+        clearBtn.addEventListener('click', () => {
+            responseDiv.style.display = 'none';
+            responseContent.innerHTML = '';
+            queryInput.value = '';
+            queryInput.focus();
+        });
+    }
+}
+
+// Initialize when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    initializePerplexitySearch();
+    // ... rest of your existing initialization code ...
+});
+
 // Idries Shah Library Application with Expand/Collapse Functionality
 
 // PDF Display Fix Functions - Added to fix PDF viewer blank display issue

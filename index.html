@@ -23,6 +23,36 @@
         </div>
     </header>
 
+           <!-- Perplexity Search Section - NEW -->
+        <section class="perplexity-search-section">
+            <div class="search-container">
+                <h2 class="search-title">Ask About Idries Shah's Works</h2>
+                <p class="search-description">Get AI-powered insights about Sufism, teaching stories, and Idries Shah's philosophy</p>
+
+                <div class="search-input-wrapper">
+                    <textarea
+                        id="perplexityQuery"
+                        class="search-textarea"
+                        placeholder="Ask a question about Idries Shah's teachings, Sufism, or any book in the library..."
+                        rows="3"
+                    ></textarea>
+                    <button id="searchBtn" class="btn btn--primary search-btn">
+                        <span class="btn-text">Search</span>
+                        <span class="btn-loader" style="display: none;">Searching...</span>
+                    </button>
+                </div>
+
+                <!-- Response Area -->
+                <div id="searchResponse" class="search-response" style="display: none;">
+                    <div class="response-header">
+                        <h3 class="response-title">Response</h3>
+                        <button id="clearResponse" class="btn btn--sm btn--secondary">Clear</button>
+                    </div>
+                    <div id="responseContent" class="response-content"></div>
+                </div>
+            </div>
+        </section>
+
     <main class="main">
         <div class="container">
             <section class="scatter-info">
