@@ -4,7 +4,7 @@
 
 // Perplexity API Configuration
 const PERPLEXITY_CONFIG = {
-    apiKey: '',
+    //apiKey: '',
     apiEndpoint: 'https://api.perplexity.ai/chat/completions',
     model: 'sonar-pro', // Using Pro model for high-quality responses
     systemPrompt: `Please provide detailed,insightful responses about the teachings, books, and Sufi philosophy contained within the search domain.
@@ -4739,3 +4739,4 @@ function closeBookModal() {
   bookModal.classList.add('hidden');
   document.body.style.overflow = '';
 }
+
