@@ -4739,4 +4739,3 @@ function closeBookModal() {
   bookModal.classList.add('hidden');
   document.body.style.overflow = '';
 }
-
