@@ -1,0 +1,11 @@
+[build]
+  publish = "shah-library v2 [COMPLETE]"
+
+[dev]
+  port = 8888
+  publish = "shah-library v2 [COMPLETE]"
+
+[functions]
+  directory = "netlify/functions"
+
+
