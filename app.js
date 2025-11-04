@@ -77,48 +77,31 @@ async function queryPerplexityAPI(userQuery) {
  */
 async function queryPerplexityAPI(userQuery) {
     try {
-        const response = await fetch(PERPLEXITY_CONFIG.apiEndpoint, {
+        const response = await fetch('/.netlify/functions/perplexity-search', {
             method: 'POST',
             headers: {
-                'Authorization': `Bearer ${PERPLEXITY_CONFIG.apiKey}`,
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: PERPLEXITY_CONFIG.model,
-                messages: [
-                    {
-                        role: 'system',
-                        content: PERPLEXITY_CONFIG.systemPrompt
-                    },
-                    {
-                        role: 'user',
-                        content: userQuery
-                    }
-                ],
-                search_domain_filter: ['idriesshahfoundation.org'],
-                temperature: 0.7,
-                max_tokens: 2000,
-                stream: false
+                query: userQuery,
+                systemPrompt: PERPLEXITY_CONFIG.systemPrompt
             })
         });
 
         if (!response.ok) {
             const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.error?.message || `API request failed: ${response.status}`);
+            throw new Error(errorData.error || `Request failed: ${response.status}`);
         }
 
         const data = await response.json();
+        return data.content;
 
-        if (data.choices && data.choices.length > 0) {
-            return data.choices[0].message.content;
-        } else {
-            throw new Error('No response received from API');
-        }
     } catch (error) {
-        console.error('Perplexity API Error:', error);
+        console.error('API Error:', error);
         throw error;
     }
 }
+
 
 /**
  * Format markdown-style text for HTML display
