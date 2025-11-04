@@ -1,27 +1,4 @@
 // =============================================================================
-// PERPLEXITY API INTEGRATION
-// =============================================================================
-
-// Perplexity API Configuration
-//const PERPLEXITY_CONFIG = {
-//    //apiKey: '',
-//    apiEndpoint: 'https://api.perplexity.ai/chat/completions',
-//    model: 'sonar-pro', // Using Pro model for high-quality responses
-//    systemPrompt: `Please provide detailed,insightful responses about the teachings, books, and Sufi philosophy contained within the search domain.
-//
-//    Do not make up sources or quotations.
-//
-//    Be scholarly but accessible.
-//
-//    If you cannot find something, tell the user rather than fabricating a reference.
-//
-//    If I ask for a piece from one of Shahs books to be quoted without explanation, please do so, by finding the PDF of the book
-//    within this public URL idriesshahfoundation.org/pdfviewer and looking inside it.`,
-//    searchDomains: ['idriesshahfoundation.org'],
-//
-//};
-
-// =============================================================================
 // PERPLEXITY API INTEGRATION (SECURE VERSION)
 // =============================================================================
 
@@ -30,8 +7,13 @@ const PERPLEXITY_CONFIG = {
     apiEndpoint: '/.netlify/functions/perplexity-search',  // Changed to Netlify function
     model: 'sonar-pro',
     systemPrompt: `Please provide detailed, insightful responses about the teachings, books,
-    and Sufi philosophy contained within the search domain. Always cite specific books or
-    teachings, add reference page numbers within the main response. Be scholarly but accessible.`,
+    and Sufi philosophy contained within the search domain.
+
+    Always cite specific books or teachings, add reference page numbers within the main response.
+
+    Be scholarly but accessible.`,
+
+    searchDomains: ['idriesshahfoundation.org'],
 };
 
 /**
@@ -39,33 +21,33 @@ const PERPLEXITY_CONFIG = {
  * @param {string} userQuery - The user's question
  * @returns {Promise<string>} - The AI response
  */
-async function queryPerplexityAPI(userQuery) {
-    try {
-        // Call our secure Netlify function instead of Perplexity directly
-        const response = await fetch(PERPLEXITY_CONFIG.apiEndpoint, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({
-                query: userQuery,
-                systemPrompt: PERPLEXITY_CONFIG.systemPrompt
-            })
-        });
-
-        if (!response.ok) {
-            const errorData = await response.json().catch(() => ({}));
-            throw new Error(errorData.error || `Request failed: ${response.status}`);
-        }
-
-        const data = await response.json();
-        return data.content;
-
-    } catch (error) {
-        console.error('Perplexity API Error:', error);
-        throw error;
-    }
-}
+//async function queryPerplexityAPI(userQuery) {
+//    try {
+//        // Call our secure Netlify function instead of Perplexity directly
+//        const response = await fetch(PERPLEXITY_CONFIG.apiEndpoint, {
+//            method: 'POST',
+//            headers: {
+//                'Content-Type': 'application/json',
+//            },
+//            body: JSON.stringify({
+//                query: userQuery,
+//                systemPrompt: PERPLEXITY_CONFIG.systemPrompt
+//            })
+//        });
+//
+//        if (!response.ok) {
+//            const errorData = await response.json().catch(() => ({}));
+//            throw new Error(errorData.error || `Request failed: ${response.status}`);
+//        }
+//
+//        const data = await response.json();
+//        return data.content;
+//
+//    } catch (error) {
+//        console.error('Perplexity API Error:', error);
+//        throw error;
+//    }
+//}
 
 // Rest of your code remains the same...
 
