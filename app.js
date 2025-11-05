@@ -6,11 +6,10 @@ const PERPLEXITY_CONFIG = {
     // ✅ API key is now on the backend - NOT here!
     apiEndpoint: '/.netlify/functions/perplexity-search',  // Changed to Netlify function
     model: 'sonar-pro',
+
     systemPrompt: `@Idries_Shah Please provide detailed, insightful responses about the teachings, books,
     and Sufi philosophy contained within the search domain.
-
-    Always cite references used in response, add reference page numbers within the main response.
-
+    Always cite accurate references used in composing the response and add reference page numbers.
     Be scholarly but accessible.`,
 
     searchDomains: ['idriesshahfoundation.org'],
