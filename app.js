@@ -67,8 +67,8 @@ async function queryPerplexityAPI(userQuery) {
             },
             body: JSON.stringify({
                 query: userQuery,
-                systemPrompt: PERPLEXITY_CONFIG.systemPrompt
-                searchDomainFilter: PERPLEXITY_CONFIG.searchDomainFilter
+                systemPrompt: PERPLEXITY_CONFIG.systemPrompt,
+                searchDomainFilter: PERPLEXITY_CONFIG.searchDomainFilter,
             })
         });
 
