@@ -12,7 +12,9 @@ const PERPLEXITY_CONFIG = {
     Always cite real references used in composing the response and add reference page numbers. Do not fabricate sources.
     Be scholarly but accessible.`,
 
-    searchDomains: ['idriesshahfoundation.org'],
+    search_domain_filter:
+    ['idriesshahfoundation.org',
+    'https://idriesshahfoundation.org/books/'],
 };
 
 /**
