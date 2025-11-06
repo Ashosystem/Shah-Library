@@ -7,7 +7,7 @@ const PERPLEXITY_CONFIG = {
     apiEndpoint: '/.netlify/functions/perplexity-search',  // Changed to Netlify function
     model: 'sonar-pro',
 
-    systemPrompt: `@Idries_Shah Please provide detailed, insightful responses about the books
+    systemPrompt: `Please provide detailed, insightful responses about the books
     contained within the search domain.
     Always cite real references used in composing the response and add reference page numbers. Do not fabricate sources.
     Be scholarly but accessible.`,
