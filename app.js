@@ -8,11 +8,11 @@ const PERPLEXITY_CONFIG = {
     model: 'sonar-pro',
 
     systemPrompt: `Please provide detailed, insightful responses about the books
-    contained within the search domain.
+    contained within the library.
     Always cite real references used in composing the response and add reference page numbers. Do not fabricate sources.
     Be scholarly but accessible.`,
 
-    search_domain_filter:
+    searchDomainFilter:
     ['idriesshahfoundation.org',
     'https://idriesshahfoundation.org/books/'],
 };
@@ -68,6 +68,7 @@ async function queryPerplexityAPI(userQuery) {
             body: JSON.stringify({
                 query: userQuery,
                 systemPrompt: PERPLEXITY_CONFIG.systemPrompt
+                searchDomainFilter: PERPLEXITY_CONFIG.searchDomainFilter
             })
         });
 

@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
 
     try {
         // Parse the request body
-        const { query, systemPrompt } = JSON.parse(event.body);
+        const {query, systemPrompt, searchDomainFilter} = JSON.parse(event.body);
 
         if (!query) {
             return {
@@ -49,7 +49,7 @@ exports.handler = async (event, context) => {
                         content: query
                     }
                 ],
-                search_domain_filter: ['idriesshahfoundation.org'],
+                search_domain_filter: searchDomainFilter || ['idriesshahfoundation.org'],
                 temperature: 0.7,
                 max_tokens: 2000,
                 stream: false
