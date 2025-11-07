@@ -5,7 +5,7 @@
 const PERPLEXITY_CONFIG = {
     // ✅ API key is now on the backend - NOT here!
     apiEndpoint: '/.netlify/functions/perplexity-search',  // Changed to Netlify function
-    model: 'sonar-pro',
+    model: 'sonar-deep-research',
 
     systemPrompt: `Please provide detailed, insightful responses about the books
     contained within the library.
