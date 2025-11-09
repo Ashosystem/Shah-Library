@@ -38,7 +38,7 @@ exports.handler = async (event, context) => {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                model: 'sonar-pro',
+                model: model || 'sonar-pro',  // ✅ Use the model from frontend
                 messages: [
                     {
                         role: 'system',
