@@ -11,7 +11,7 @@ exports.handler = async (event, context) => {
 
     try {
         // Parse the request body
-        const {query, systemPrompt, searchDomainFilter} = JSON.parse(event.body);
+        const {query, systemPrompt, searchDomainFilter, model} = JSON.parse(event.body);
 
         if (!query) {
             return {
