@@ -14,7 +14,9 @@ const PERPLEXITY_CONFIG = {
 
     searchDomainFilter:
     ['idriesshahfoundation.org',
-    'https://idriesshahfoundation.org/books/'],
+    'https://idriesshahfoundation.org/books/',
+    'muslimheritage.com/trevor-hilder-sustainable-history/',
+    'https://idriesshahfoundation.org/idries-shah-profile-and-interview-in-psychology-today-1975/'],
 };
 
 /**
