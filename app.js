@@ -9,7 +9,7 @@ const PERPLEXITY_CONFIG = {
 
     systemPrompt: `Please provide detailed, insightful responses about the books
     contained within the library.
-    Always cite real references used in composing the response and add reference page numbers. Do not fabricate sources.
+    Always cite the real english-language references used in composing the response and add reference page numbers. Do not fabricate sources.
     Be scholarly but accessible.`,
 
     searchDomainFilter:
