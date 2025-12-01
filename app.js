@@ -203,7 +203,7 @@ const libraryData = {
           "main_url": "https://idriesshahfoundation.org/books/tales-of-the-dervishes/",
           "pdf_url": "https://idriesshahfoundation.org/pdfviewer/tales-of-the-dervishes/?auto_viewer=true",
           "description": "Collection of teaching stories with postscripts explaining their use",
-          "note": "Contains teaching stories like 'The Magic Horse', 'The Man with Inexplicable Life'",
+          "note": "Contains teaching stories like 'The Tale of the Sands', 'Strike on This Spot'",
           "chapters": [
               { title: "Preface", page: "xiii", url: "https://idriesshahfoundation.org/pdfviewer/tales-of-the-dervishes/?auto_viewer=true#page=13" },
               { title: "The Three Fishes", page: 1, url: "https://idriesshahfoundation.org/pdfviewer/tales-of-the-dervishes/?auto_viewer=true#page=15" },
