@@ -257,22 +257,29 @@ function generateFixedPDFUrl(originalUrl) {
     }
 }
 
-function openPDFWithFix(originalPdfUrl) {
-    const fixedUrl = generateFixedPDFUrl(originalPdfUrl);
-    const pdfWindow = window.open(fixedUrl, '_blank', 'noopener,noreferrer');
+function openPDFWithFix(originalPdfUrl, focusTab = true) {
+    const fixedUrl = generateFixedPDFUrl(originalPdfUrl)
+
+    // Open PDF in new tab
+    const pdfWindow = window.open(fixedUrl, '_blank', 'noopener,noreferrer')
 
     if (pdfWindow) {
+        // If focusTab is FALSE, prevent the new window from stealing focus
+        if (!focusTab) {
+            // Don't let the tab take focus
+            window.focus()
+        }
+
         // Apply the display fix
-        fixPDFViewerDisplay(pdfWindow);
+        fixPDFViewerDisplay(pdfWindow)
 
         // Additional fix attempt after longer delay
-        setTimeout(() => {
-            fixPDFViewerDisplay(pdfWindow);
-        }, 5000);
+        setTimeout(() => fixPDFViewerDisplay(pdfWindow), 5000)
     }
 
-    return pdfWindow;
+    return pdfWindow
 }
+
 
 // Message listener for cross-window communication
 window.addEventListener('message', function(event) {
@@ -4690,6 +4697,264 @@ function findBookByTitle(title) {
   }
   return null;
 }
+
+// ============================================================
+// Random Story Button
+// ============================================================
+
+const randomStoryBtn = document.getElementById('random-story-btn');
+if (randomStoryBtn) {
+    randomStoryBtn.addEventListener('click', openRandomStory);
+}
+
+
+// ============================================================
+// ADD THE RANDOM STORY FUNCTION HERE ✅
+// ============================================================
+
+/**
+ * Gets all chapters/entries from all books in the collection
+ */
+function getAllChaptersFromLibrary() {
+    const allChapters = [];
+
+    Object.values(libraryData.categories).forEach(categoryData => {
+        categoryData.books.forEach(book => {
+            // If book has chapters, add each as a separate entry
+            if (book.chapters && book.chapters.length > 0) {
+                book.chapters.forEach(chapter => {
+                    allChapters.push({
+                        type: 'chapter',
+                        book: book,
+                        chapter: chapter,
+                        title: chapter.title,
+                        page: chapter.page,
+                        url: chapter.url  // Direct PDF URL with page
+                    });
+                });
+            } else {
+                // If no chapters, add the book itself as an entry
+                allChapters.push({
+                    type: 'book',
+                    book: book,
+                    chapter: null,
+                    title: book.title,
+                    url: book.pdfurl
+                });
+            }
+        });
+    });
+
+    return allChapters;
+}
+
+/**
+ * Selects a random chapter/entry from the entire collection
+ */
+function getRandomStory() {
+    const allChapters = getAllChaptersFromLibrary();
+
+    if (allChapters.length === 0) {
+        console.warn('No stories or chapters available');
+        return null;
+    }
+
+    const randomIndex = Math.floor(Math.random() * allChapters.length);
+    return allChapters[randomIndex];
+}
+
+// Simple notification function
+function showNotification(message) {
+    const notification = document.createElement('div');
+    notification.style.cssText = `
+        position: fixed;
+        top: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--color-primary);
+        color: var(--color-btn-primary-text);
+        padding: 12px 20px;
+        border-radius: 6px;
+        z-index: 2000;
+        font-size: 14px;
+        animation: slideDown 0.3s ease-out;
+    `;
+    notification.textContent = '🎲 ' + message;
+    document.body.appendChild(notification);
+
+    setTimeout(() => {
+        notification.style.animation = 'slideUp 0.3s ease-out';
+        setTimeout(() => notification.remove(), 300);
+    }, 2500);
+}
+
+
+/**
+ * Opens a random story/chapter directly in the PDF viewer
+ * Skips the modal and goes straight to PDF
+ */
+/**
+/**
+ * Opens a random story/chapter directly in the PDF viewer (in new tab)
+ * User stays on the library page to see the notification
+ */
+/**
+ * Opens a random story/chapter directly in the PDF viewer in new tab
+ * User stays on library page to see the notification
+ */
+function openRandomStory() {
+  const randomEntry = getRandomStory();
+  if (!randomEntry) {
+    showNotification('No stories available');
+    return;
+  }
+
+  // Show notification with action
+  if (randomEntry.type === 'chapter') {
+    showNotificationWithAction(
+      `Opening: ${randomEntry.chapter.title} from ${randomEntry.book.title}`,
+      () => window.open(randomEntry.url, '_blank', 'noopener')
+    );
+  } else {
+    showNotificationWithAction(
+      `Opening: ${randomEntry.book.title}`,
+      () => window.open(randomEntry.url, '_blank', 'noopener')
+    );
+  }
+}
+
+// Global variable to track current notification
+let currentNotification = null;
+
+// Enhanced notification function with action button - stays indefinitely
+function showNotificationWithAction(message, action) {
+  // Remove previous notification if it exists
+  if (currentNotification) {
+    currentNotification.remove();
+  }
+
+  const notification = document.createElement('div');
+  notification.style.cssText = `
+    position: fixed;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-primary);
+    color: var(--color-btn-primary-text);
+    padding: 12px 20px;
+    border-radius: 6px;
+    z-index: 2000;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideDown 0.3s ease-out;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  `;
+
+  const text = document.createElement('span');
+  text.textContent = message;
+
+  const button = document.createElement('button');
+  button.textContent = 'Open Now';
+  button.style.cssText = `
+    background: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: var(--color-btn-primary-text);
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  `;
+
+  button.onmouseover = () => {
+    button.style.background = 'rgba(255, 255, 255, 0.3)';
+  };
+  button.onmouseout = () => {
+    button.style.background = 'rgba(255, 255, 255, 0.2)';
+  };
+
+  button.onclick = (e) => {
+    e.stopPropagation();
+    action();
+  };
+
+  // Close button (X)
+  const closeBtn = document.createElement('button');
+  closeBtn.innerHTML = '×';
+  closeBtn.style.cssText = `
+    background: none;
+    border: none;
+    color: var(--color-btn-primary-text);
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+  `;
+
+  closeBtn.onmouseover = () => {
+    closeBtn.style.opacity = '1';
+  };
+  closeBtn.onmouseout = () => {
+    closeBtn.style.opacity = '0.7';
+  };
+
+  closeBtn.onclick = (e) => {
+    e.stopPropagation();
+    if (notification && notification.parentElement) {
+      notification.style.animation = 'slideUp 0.3s ease-out';
+      setTimeout(() => {
+        if (notification && notification.parentElement) {
+          notification.remove();
+        }
+      }, 300);
+    }
+  };
+
+  notification.appendChild(text);
+  notification.appendChild(button);
+  notification.appendChild(closeBtn);
+  document.body.appendChild(notification);
+
+  // Store reference to current notification
+  currentNotification = notification;
+}
+
+// Updated openRandomStory function
+function openRandomStory() {
+  const randomEntry = getRandomStory();
+  if (!randomEntry) {
+    showNotificationWithAction('No stories available', () => {});
+    return;
+  }
+
+  // Show notification with action
+  if (randomEntry.type === 'chapter') {
+    showNotificationWithAction(
+      `Opening: ${randomEntry.chapter.title} from ${randomEntry.book.title}`,
+      () => window.open(randomEntry.url, '_blank', 'noopener')
+    );
+  } else {
+    showNotificationWithAction(
+      `Opening: ${randomEntry.book.title}`,
+      () => window.open(randomEntry.url, '_blank', 'noopener')
+    );
+  }
+}
+
+
+
+// ============================================================
+// END RANDOM STORY FUNCTION
+// ============================================================
+
 
 // Open book modal
 function openBookModal(book) {
