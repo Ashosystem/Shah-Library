@@ -4836,7 +4836,7 @@ function showNotificationWithAction(message, action) {
   const notification = document.createElement('div');
   notification.style.cssText = `
     position: fixed;
-    top: 20px;
+    top: 155px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--color-primary);
