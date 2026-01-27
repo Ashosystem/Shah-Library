@@ -4464,22 +4464,31 @@ function toggleCategory(categoryName) {
 function setupEventListeners() {
   const searchInput = document.getElementById('search-input');
   const searchClear = document.getElementById('search-clear');
-  
-  // Search functionality - direct event listeners on input element
-  if (searchInput) {
-    searchInput.addEventListener('input', handleSearch);
-    searchInput.addEventListener('keyup', handleSearch); // Add keyup as backup
-    searchInput.addEventListener('keydown', function(e) {
-      if (e.key === 'Escape') {
-        clearSearch();
-      }
-    });
-    
-    // Ensure input is not being blocked
-    searchInput.addEventListener('focus', function() {
-      console.log('Search input focused');
-    });
-  }
+  const searchBtn = document.getElementById('search-btn');
+
+
+    // Search functionality - BUTTON TRIGGERED ONLY (not on real-time input)
+    if (searchBtn) {
+      searchBtn.addEventListener('click', handleSearch);
+    }
+
+    // Allow Enter key to trigger search from input field
+    if (searchInput) {
+      searchInput.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+          e.preventDefault();
+          handleSearch();
+        }
+        if (e.key === 'Escape') {
+          clearSearch();
+        }
+      });
+
+      searchInput.addEventListener('focus', function() {
+        console.log('Search input focused');
+      });
+    }
+
   
   if (searchClear) {
     searchClear.addEventListener('click', function(e) {
@@ -4597,35 +4606,38 @@ function setupEventListeners() {
 
 // Handle search input
 function handleSearch(e) {
-  const searchInput = e.target;
+  // Don't require event target anymore
+  const searchInput = document.getElementById('search-input');
   const searchClear = document.getElementById('search-clear');
-  
+
   if (!searchInput) return;
-  
+
   const query = searchInput.value.trim().toLowerCase();
+
   console.log('Search query:', query); // Debug log
-  
+
   if (query.length === 0) {
     clearSearch();
     return;
   }
-  
+
   if (searchClear) {
     searchClear.classList.add('visible');
   }
-  
+
   const results = searchIndex.filter(item => {
     const titleMatch = item.title.toLowerCase().includes(query);
     const descMatch = item.description && item.description.toLowerCase().includes(query);
     const noteMatch = item.note && item.note.toLowerCase().includes(query);
     const bookTitleMatch = item.bookTitle && item.bookTitle.toLowerCase().includes(query);
-    
+
     return titleMatch || descMatch || noteMatch || bookTitleMatch;
   });
-  
+
   console.log('Search results:', results.length); // Debug log
   displaySearchResults(results, query);
 }
+
 
 // Display search results
 function displaySearchResults(results, query) {
