@@ -4602,7 +4602,39 @@ function setupEventListeners() {
       closeBookModal();
     }
   });
+
+  // NEW: Close button for search results
+  const searchResultsClose = document.getElementById('search-results-close');
+  if (searchResultsClose) {
+    searchResultsClose.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      clearSearch();
+    });
+  }
+
+  // NEW: Click overlay background to close
+  const searchOverlay = document.getElementById('search-overlay');
+  if (searchOverlay) {
+    searchOverlay.addEventListener('click', (e) => {
+      // Only close if clicking the overlay itself, not the results
+      if (e.target === searchOverlay) {
+        clearSearch();
+      }
+    });
+  }
+
+  // NEW: Escape key to close search results
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const searchOverlay = document.getElementById('search-overlay');
+      if (searchOverlay && searchOverlay.classList.contains('active')) {
+        clearSearch();
+      }
+    }
+  });
 }
+
 
 // Handle search input
 function handleSearch(e) {
@@ -4644,9 +4676,15 @@ function displaySearchResults(results, query) {
   const searchResults = document.getElementById('search-results');
   const resultsContainer = document.getElementById('results-container');
   const libraryContent = document.getElementById('library-content');
-  
+  const searchOverlay = document.getElementById('search-overlay');
+
   if (!searchResults || !resultsContainer || !libraryContent) return;
-  
+
+  // Activate overlay - fade everything to black except results
+  if (searchOverlay) {
+    searchOverlay.classList.add('active');
+  }
+
   if (results.length === 0) {
     resultsContainer.innerHTML = `<p>No results found for "${query}"</p>`;
   } else {
@@ -4694,11 +4732,17 @@ function clearSearch() {
   const searchClear = document.getElementById('search-clear');
   const searchResults = document.getElementById('search-results');
   const libraryContent = document.getElementById('library-content');
-  
+  const searchOverlay = document.getElementById('search-overlay');
+
   if (searchInput) searchInput.value = '';
   if (searchClear) searchClear.classList.remove('visible');
   if (searchResults) searchResults.style.display = 'none';
   if (libraryContent) libraryContent.style.display = 'block';
+
+  // Remove overlay - restore normal page view
+  if (searchOverlay) {
+    searchOverlay.classList.remove('active');
+  }
 }
 
 // Find book by title

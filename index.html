@@ -26,13 +26,16 @@
                 </svg>
                 </button>
             </div>
-
+        <!-- Search Results Overlay -->
+        <div class="search-overlay" id="search-overlay">
             <div class="search-results" id="search-results" style="display: none;">
+              <div class="search-results-header">
                 <h3>Search Results</h3>
-                <div class="results-container" id="results-container">
-                    <!-- Search results will be populated here -->
-                </div>
-            </div>
+                <button class="search-results-close" id="search-results-close" aria-label="Close search results">×</button>
+              </div>
+            <div class="results-container" id="results-container"></div>
+
+        </div>
 
             <!-- Add this button next to your search input or in the header -->
         <button id="random-story-btn" class="btn btn--primary" >
