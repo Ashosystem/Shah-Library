@@ -1517,6 +1517,10 @@ select.form-control {
   transform: scale(0.95);
 }
 
+/* Hide body scrollbar when search overlay is active */
+body.search-overlay-active {
+  overflow: hidden;
+}
 
 @media (max-width: 480px) {
   .container {

@@ -4708,7 +4708,10 @@ function displaySearchResults(results, query) {
       }
     }).join('');
   }
-  
+
+    // Hide body scrollbar
+  document.body.classList.add('search-overlay-active');
+
   searchResults.style.display = 'block';
   libraryContent.style.display = 'none';
 }
