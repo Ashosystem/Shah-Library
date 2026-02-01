@@ -860,8 +860,8 @@ select.form-control {
 /* Desktop - reduce the gap between paragraphs */
 @media (min-width: 769px) {
   .scatter-card p {
-    margin-bottom: var(--space-8); /* Reduced from 16px to 8px */
-    line-height: 0.8; /* Slightly more space within paragraphs */
+    margin-bottom: var(--space-12); /* Reduced from 16px to 8px */
+    line-height: 1.2; /* Slightly more space within paragraphs */
   }
 }
 
