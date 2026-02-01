@@ -861,7 +861,7 @@ select.form-control {
 @media (min-width: 769px) {
   .scatter-card p {
     margin-bottom: var(--space-12); /* Reduced from 16px to 8px */
-    line-height: 1.2; /* Slightly more space within paragraphs */
+    line-height: 1; /* Slightly more space within paragraphs */
   }
 }
 
@@ -869,7 +869,7 @@ select.form-control {
 @media (max-width: 768px) {
   .scatter-card p {
     margin-bottom: var(--space-12); /* 12px - medium spacing */
-    line-height: 1.2;
+    line-height: 1.1;
   }
 }
 
