@@ -851,15 +851,34 @@ select.form-control {
   border: 1px solid var(--color-border);
 }
 
+/* Tighter paragraph spacing for scatter card on desktop */
+.scatter-card p {
+  margin-bottom: var(--space-16);
+  line-height: var(--line-height-normal);
+}
+
+/* Desktop - reduce the gap between paragraphs */
+@media (min-width: 769px) {
+  .scatter-card p {
+    margin-bottom: var(--space-8); /* Reduced from 16px to 8px */
+    line-height: 0.8; /* Slightly more space within paragraphs */
+  }
+}
+
+/* Mobile keeps default or custom mobile styles */
+@media (max-width: 768px) {
+  .scatter-card p {
+    margin-bottom: var(--space-12); /* 12px - medium spacing */
+    line-height: 1.2;
+  }
+}
+
+
 .scatter-card h2 {
   margin-bottom: var(--space-16);
   color: var(--color-text);
 }
 
-.scatter-card p {
-  margin-bottom: var(--space-16);
-  line-height: var(--line-height-normal);
-}
 
 .scatter-points {
   list-style: none;
