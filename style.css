@@ -1070,6 +1070,50 @@ select.form-control {
     transform: scale(1.05);
 }
 
+/* ── Alt-thumbnail cycling (Farsi editions) ─────────────────────────────── */
+.book-thumbnail.has-alt-thumbnail {
+    cursor: pointer;
+    position: relative;
+}
+
+/* Prevent the card-level hover scale interfering when thumbnail is clickable */
+.book-thumbnail.has-alt-thumbnail img {
+    transition: transform var(--duration-normal, 0.3s) var(--ease-standard, ease),
+                opacity 0.2s ease;
+}
+
+.book-thumbnail.has-alt-thumbnail:active img {
+    opacity: 0.8;
+}
+
+/* Small rotating-arrows badge in the corner */
+.thumb-alt-badge {
+    position: absolute;
+    bottom: 6px;
+    right: 6px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 13px;
+    line-height: 1;
+    padding: 4px 5px;
+    border-radius: 50%;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    user-select: none;
+}
+
+.book-thumbnail.has-alt-thumbnail:hover .thumb-alt-badge {
+    opacity: 1;
+}
+
+/* When showing the alt cover, keep badge visible and tint it amber */
+.book-thumbnail.has-alt-thumbnail.showing-alt .thumb-alt-badge {
+    opacity: 1;
+    background: var(--color-primary, #8b6914);
+}
+/* ─────────────────────────────────────────────────────────────────────────── */
+
 @media (max-width: 516px) {
   .header #random-story-btn {
     margin-right: var(--space-16);
@@ -1847,6 +1891,132 @@ body.search-overlay-active {
         flex-direction: column;
         align-items: flex-start;
         gap: var(--space-8);
-    }
+    } */
 }
 
+
+/* ============================================================
+   TRANSLATED EDITIONS - Horizontal filing tabs
+   ============================================================ */
+
+/* Tab row — sits flush above the content pane border */
+.lang-headers-row {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  gap: 6px !important;
+  padding: 0 !important;
+  align-items: flex-end !important;
+  border-bottom: 3px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+}
+
+/* Filing tab shape: rounded top corners only, no bottom border.
+   Each tab gets its own tinted background drawn from the app's
+   category palette so they are never plain white. */
+.lang-header-btn {
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 4px !important;
+  padding: 18px 18px 14px !important;
+  /* Default tint — individual nth-child rules below override this */
+  background: var(--color-secondary, rgba(94,82,64,0.10)) !important;
+  border: 2px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+  border-bottom: none !important;
+  border-radius: 10px 10px 0 0 !important;
+  cursor: pointer !important;
+  font-family: inherit !important;
+  text-align: left !important;
+  color: var(--color-text, #13343b) !important;
+  position: relative !important;
+  bottom: -3px !important;
+  box-sizing: border-box !important;
+  /* Subtle tab-lift shadow */
+  box-shadow: 2px -2px 6px rgba(0,0,0,0.06) !important;
+  transition: padding-top 0.14s ease, box-shadow 0.14s ease, filter 0.14s ease !important;
+}
+
+/* Hover: brighten slightly, lift the tab */
+.lang-header-btn:hover:not(.lang-header-btn--active) {
+  filter: brightness(0.94) !important;
+  padding-top: 22px !important;
+  box-shadow: 3px -4px 10px rgba(0,0,0,0.10) !important;
+}
+
+/* Active tab: stands tallest, stronger border, bottom sealed to pane */
+.lang-header-btn--active {
+  filter: brightness(0.82) !important;
+  padding-top: 26px !important;
+  border-width: 2px !important;
+  border-bottom: none !important;
+  /* Seal the join — bottom colour matches content pane */
+  border-bottom-color: transparent !important;
+  color: var(--color-text, #13343b) !important;
+  box-shadow: 3px -5px 14px rgba(0,0,0,0.13) !important;
+  z-index: 2 !important;
+}
+
+/* Hide the +/− toggle — the tab itself is the affordance */
+.lang-header-toggle {
+  display: none !important;
+}
+
+.lang-header-label {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  color: var(--color-text) !important;
+  line-height: 1.2 !important;
+}
+
+.lang-header-count {
+  font-size: 12px !important;
+  opacity: 0.65 !important;
+  white-space: nowrap !important;
+  font-weight: 400 !important;
+  color: var(--color-text-secondary) !important;
+}
+
+/* Content pane — completes the folder shape below the tabs */
+.lang-content-pane {
+  margin-top: 0 !important;
+  border: 2px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+  border-top: none !important;
+  border-radius: 0 0 var(--radius-md, 10px) var(--radius-md, 10px) !important;
+  padding: 24px !important;
+  background: var(--color-surface, #fcfcfd) !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.04) !important;
+}
+
+/* Mobile: allow wrapping into two columns */
+@media (max-width: 640px) {
+  .lang-headers-row {
+    flex-wrap: wrap !important;
+    border-bottom: none !important;
+    gap: 8px !important;
+  }
+  .lang-header-btn {
+    flex: 1 1 44% !important;
+    border-radius: 8px !important;
+    border: 2px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+    /* Restore bottom border on mobile since there's no pane join */
+    border-bottom: 2px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+    bottom: 0 !important;
+    padding: 14px 14px !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.06) !important;
+  }
+  .lang-header-btn--active {
+    filter: brightness(0.82) !important;
+    border-color: inherit !important;
+  }
+  .lang-content-pane {
+    border: 2px solid var(--color-border, rgba(94,82,64,0.2)) !important;
+    border-radius: var(--radius-md, 10px) !important;
+    margin-top: 10px !important;
+  }
+}
