@@ -303,6 +303,8 @@ const FARSI_ALT_THUMBNAILS = {
     'Thinkers of the East (Farsi) by Idries Shah - The Idries Shah Foundation.png',
   'wisdom-of-the-idiots-farsi':
     'Wisdom of the Idiots (Farsi) by Idries Shah - The Idries Shah Foundation.png',
+  'special-illumination-the-sufi-use-of-humour-farsi':
+    'Special Illumination (Farsi) by Idries Shah - The Idries Shah Foundation.png',
 };
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -8174,76 +8176,76 @@ const libraryData = {
             {
             "title": "تجلی خاص: کاربرد بذله در تصوف",
             "main_url": "https://idriesshahfoundation.org/books/special-illumination-the-sufi-use-of-humour-farsi/",
-            "pdf_url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true",
+            "pdf_url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true",
             "description": "ترجمه فارسی  درباره کاربرد طنز در تصوف",
             "chapters": [
-              { "title": "تجلی خاص: کاربرد بذله در تصوف", "page": 8,  "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=8" },
-              { "title": "در همین فکرم",                       "page": 11, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=11" },
-              { "title": "شعله",                               "page": 15, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=15" },
-              { "title": "دلار",                               "page": 16, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=16" },
-              { "title": "دستور پخت",                          "page": 17, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=17" },
-              { "title": "سوابق",                              "page": 18, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=18" },
-              { "title": "مکتب‌خانه",                          "page": 20, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=20" },
-              { "title": "باور",                               "page": 22, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=22" },
-              { "title": "کار نکن، مزد می‌گیری",               "page": 22, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=22" },
-              { "title": "سخت‌تر کوشیدن",                      "page": 23, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=23" },
-              { "title": "این هم خوب است",                     "page": 24, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=24" },
-              { "title": "سر ماجرا",                           "page": 25, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=25" },
-              { "title": "دلیل سخن",                           "page": 27, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=27" },
-              { "title": "آنچه نیاز بود",                      "page": 27, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=27" },
-              { "title": "آداب خاص",                           "page": 29, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=29" },
+              { "title": "تجلی خاص: کاربرد بذله در تصوف", "page": 8,  "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=8" },
+              { "title": "در همین فکرم",                       "page": 11, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=11" },
+              { "title": "شعله",                               "page": 15, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=15" },
+              { "title": "دلار",                               "page": 16, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=16" },
+              { "title": "دستور پخت",                          "page": 17, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=17" },
+              { "title": "سوابق",                              "page": 18, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=18" },
+              { "title": "مکتب‌خانه",                          "page": 20, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=20" },
+              { "title": "باور",                               "page": 22, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=22" },
+              { "title": "کار نکن، مزد می‌گیری",               "page": 22, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=22" },
+              { "title": "سخت‌تر کوشیدن",                      "page": 23, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=23" },
+              { "title": "این هم خوب است",                     "page": 24, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=24" },
+              { "title": "سر ماجرا",                           "page": 25, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=25" },
+              { "title": "دلیل سخن",                           "page": 27, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=27" },
+              { "title": "آنچه نیاز بود",                      "page": 27, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=27" },
+              { "title": "آداب خاص",                           "page": 29, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=29" },
 
-              { "title": "بار دوش",                            "page": 30, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=30" },
-              { "title": "خوش‌شانس",                           "page": 31, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=31" },
-              { "title": "هرچه او بخواهد",                     "page": 33, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=33" },
-              { "title": "هنگام ازدواج…",                      "page": 34, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=34" },
-              { "title": "به چه دلیل",                         "page": 35, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=35" },
-              { "title": "قصه کفش‌ها",                         "page": 36, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=36" },
-              { "title": "رنگ",                                "page": 37, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=37" },
-              { "title": "عضلات",                              "page": 38, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=38" },
-              { "title": "توضیح",                              "page": 39, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=39" },
-              { "title": "ذکر و فرزانگی",                      "page": 40, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=40" },
-              { "title": "بطری",                               "page": 41, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=41" },
-              { "title": "فرار",                               "page": 42, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=42" },
-              { "title": "شرط‌بندی",                           "page": 43, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=43" },
-              { "title": "معنا",                               "page": 44, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=44" },
-              { "title": "زحمت زیادی دارد",                    "page": 45, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=45" },
-              { "title": "معنا",                               "page": 46, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=46" },
-              { "title": "ارزش",                               "page": 47, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=47" },
-              { "title": "از وحشتش پیداست",                    "page": 48, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=48" },
-              { "title": "خشونت",                              "page": 49, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=49" },
-              { "title": "نمایش",                              "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=52" },
-              { "title": "حیله‌گر",                            "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=52" },
+              { "title": "بار دوش",                            "page": 30, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=30" },
+              { "title": "خوش‌شانس",                           "page": 31, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=31" },
+              { "title": "هرچه او بخواهد",                     "page": 33, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=33" },
+              { "title": "هنگام ازدواج…",                      "page": 34, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=34" },
+              { "title": "به چه دلیل",                         "page": 35, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=35" },
+              { "title": "قصه کفش‌ها",                         "page": 36, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=36" },
+              { "title": "رنگ",                                "page": 37, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=37" },
+              { "title": "عضلات",                              "page": 38, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=38" },
+              { "title": "توضیح",                              "page": 39, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=39" },
+              { "title": "ذکر و فرزانگی",                      "page": 40, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=40" },
+              { "title": "بطری",                               "page": 41, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=41" },
+              { "title": "فرار",                               "page": 42, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=42" },
+              { "title": "شرط‌بندی",                           "page": 43, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=43" },
+              { "title": "معنا",                               "page": 44, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=44" },
+              { "title": "زحمت زیادی دارد",                    "page": 45, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=45" },
+              { "title": "معنا",                               "page": 46, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=46" },
+              { "title": "ارزش",                               "page": 47, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=47" },
+              { "title": "از وحشتش پیداست",                    "page": 48, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=48" },
+              { "title": "خشونت",                              "page": 49, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=49" },
+              { "title": "نمایش",                              "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=52" },
+              { "title": "حیله‌گر",                            "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=52" },
 
-              { "title": "آنجا چکار می‌کرد؟",                  "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=52" },
-              { "title": "اثبات",                             "page": 54, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=54" },
-              { "title": "رایگان",                            "page": 55, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=55" },
-              { "title": "عبور از رودخانه",                    "page": 56, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=56" },
-              { "title": "حس کردن دانستن است",                 "page": 58, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=58" },
-              { "title": "ماه عسل",                            "page": 59, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=59" },
-              { "title": "مرشد بازنازک",                       "page": 60, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=60" },
-              { "title": "عمل",                               "page": 61, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=61" },
-              { "title": "نیت",                               "page": 62, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=62" },
-              { "title": "استنتاج",                           "page": 63, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=63" },
-              { "title": "چگونه گفتن",                        "page": 64, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=64" },
-              { "title": "مرغابی",                             "page": 65, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=65" },
-              { "title": "طلا برای همه",                       "page": 66, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=66" },
-              { "title": "خیلی دیر",                           "page": 67, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=67" },
-              { "title": "بازدیدکننده",                        "page": 68, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=68" },
-              { "title": "لنکان",                             "page": 69, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=69" },
-              { "title": "قسم",                               "page": 70, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=70" },
-              { "title": "یک لحظه صبر کن…",                    "page": 70, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=70" },
-              { "title": "آرزوی بزرگ",                         "page": 71, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=71" },
-              { "title": "سابقه",                              "page": 72, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=72" },
-              { "title": "احترام در جای لازم",                 "page": 73, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=73" },
-              { "title": "واقعیت",                             "page": 73, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=73" },
-              { "title": "مشکل",                               "page": 74, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=74" },
-              { "title": "علت و معلوم",                        "page": 75, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=75" },
-              { "title": "مدل صادراتی",                         "page": 76, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=76" },
-              { "title": "هر طور که دلت می‌خواهد",             "page": 77, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=77" },
-              { "title": "عواقب",                              "page": 77, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=77" },
-              { "title": "تفاوت",                              "page": 78, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=78" },
-              { "title": "درباره نویسنده",                     "page": 79, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-the-sufi-use-of-humour-farsi/?auto_viewer=true#page=79" }
+              { "title": "آنجا چکار می‌کرد؟",                  "page": 52, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=52" },
+              { "title": "اثبات",                             "page": 54, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=54" },
+              { "title": "رایگان",                            "page": 55, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=55" },
+              { "title": "عبور از رودخانه",                    "page": 56, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=56" },
+              { "title": "حس کردن دانستن است",                 "page": 58, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=58" },
+              { "title": "ماه عسل",                            "page": 59, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=59" },
+              { "title": "مرشد بازنازک",                       "page": 60, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=60" },
+              { "title": "عمل",                               "page": 61, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=61" },
+              { "title": "نیت",                               "page": 62, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=62" },
+              { "title": "استنتاج",                           "page": 63, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=63" },
+              { "title": "چگونه گفتن",                        "page": 64, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=64" },
+              { "title": "مرغابی",                             "page": 65, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=65" },
+              { "title": "طلا برای همه",                       "page": 66, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=66" },
+              { "title": "خیلی دیر",                           "page": 67, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=67" },
+              { "title": "بازدیدکننده",                        "page": 68, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=68" },
+              { "title": "لنکان",                             "page": 69, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=69" },
+              { "title": "قسم",                               "page": 70, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=70" },
+              { "title": "یک لحظه صبر کن…",                    "page": 70, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=70" },
+              { "title": "آرزوی بزرگ",                         "page": 71, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=71" },
+              { "title": "سابقه",                              "page": 72, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=72" },
+              { "title": "احترام در جای لازم",                 "page": 73, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=73" },
+              { "title": "واقعیت",                             "page": 73, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=73" },
+              { "title": "مشکل",                               "page": 74, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=74" },
+              { "title": "علت و معلوم",                        "page": 75, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=75" },
+              { "title": "مدل صادراتی",                         "page": 76, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=76" },
+              { "title": "هر طور که دلت می‌خواهد",             "page": 77, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=77" },
+              { "title": "عواقب",                              "page": 77, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=77" },
+              { "title": "تفاوت",                              "page": 78, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=78" },
+              { "title": "درباره نویسنده",                     "page": 79, "url": "https://idriesshahfoundation.org/pdfviewer/special-illumination-farsi-by-idries-shah/?auto_viewer=true#page=79" }
             ]
         },
 
@@ -9869,9 +9871,8 @@ if (randomStoryBtn) {
 function getAllChaptersFromLibrary() {
     const allChapters = [];
 
-    Object.values(libraryData.categories).forEach(categoryData => {
-        categoryData.books.forEach(book => {
-            // If book has chapters, add each as a separate entry
+    function processBooks(books) {
+        books.forEach(book => {
             if (book.chapters && book.chapters.length > 0) {
                 book.chapters.forEach(chapter => {
                     allChapters.push({
@@ -9880,11 +9881,10 @@ function getAllChaptersFromLibrary() {
                         chapter: chapter,
                         title: chapter.title,
                         page: chapter.page,
-                        url: chapter.url  // Direct PDF URL with page
+                        url: chapter.url
                     });
                 });
             } else {
-                // If no chapters, add the book itself as an entry
                 allChapters.push({
                     type: 'book',
                     book: book,
@@ -9894,6 +9894,18 @@ function getAllChaptersFromLibrary() {
                 });
             }
         });
+    }
+
+    Object.values(libraryData.categories).forEach(categoryData => {
+        // Group categories (e.g. Translated Editions) have subcategoryNames, not books directly
+        if (categoryData.isGroup) {
+            (categoryData.subcategoryNames || []).forEach(subName => {
+                const subData = libraryData.categories[subName];
+                if (subData && subData.books) processBooks(subData.books);
+            });
+        } else if (categoryData.books) {
+            processBooks(categoryData.books);
+        }
     });
 
     return allChapters;
@@ -10001,6 +10013,7 @@ function showNotificationWithAction(message, action) {
     gap: 12px;
     animation: slideDown 0.3s ease-out;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    max-width: 90vw;
   `;
 
   const text = document.createElement('span');
@@ -10077,30 +10090,6 @@ function showNotificationWithAction(message, action) {
   // Store reference to current notification
   currentNotification = notification;
 }
-
-// Updated openRandomStory function
-function openRandomStory() {
-  const randomEntry = getRandomStory();
-  if (!randomEntry) {
-    showNotificationWithAction('No stories available', () => {});
-    return;
-  }
-
-  // Show notification with action
-  if (randomEntry.type === 'chapter') {
-    showNotificationWithAction(
-      `Opening: ${randomEntry.chapter.title} from ${randomEntry.book.title}`,
-      () => window.open(randomEntry.url, '_blank', 'noopener')
-    );
-  } else {
-    showNotificationWithAction(
-      `Opening: ${randomEntry.book.title}`,
-      () => window.open(randomEntry.url, '_blank', 'noopener')
-    );
-  }
-}
-
-
 
 // ============================================================
 // END RANDOM STORY FUNCTION
